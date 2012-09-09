@@ -1,5 +1,7 @@
 Comments = new Meteor.Collection('comments');
 
+StyleNewRecords = {};
+
 if (Meteor.is_client) {
 
   Template.comments.helpers({
@@ -10,12 +12,12 @@ if (Meteor.is_client) {
   
   Template.comment.helpers({
     isNew: function() {
-      return (new Date(this.createdAt)) > Session.get('commentEpoch');
+      return (new Date(this.createdAt)) > StyleNewRecords;
     }
   });
   
   Meteor.subscribe('comments', function() {
-    Session.set('commentEpoch', new Date());
+    StyleNewRecords = new Date();
   });
 }
 
