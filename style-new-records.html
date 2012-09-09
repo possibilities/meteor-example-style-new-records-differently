@@ -1,0 +1,19 @@
+<head>
+  <title>style-new-records</title>
+</head>
+
+<body>
+  {{> comments}}
+</body>
+
+<template name="comments">
+  <h1>Style new records differently</h1>
+  
+  {{#each comments}}
+    {{> comment}}
+  {{/each}}
+</template>
+
+<template name="comment">
+  <p class="comment {{#if isNew}}new{{else}}old{{/if}}">{{name}}</p>
+</template>

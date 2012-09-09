@@ -1,0 +1,13 @@
+
+.comment {
+  width: 100px;
+  height: 30px;
+}
+
+.comment.old {
+  background-color: green;
+}
+
+.comment.new {
+  background-color: blue;
+}
